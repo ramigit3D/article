@@ -8,6 +8,7 @@
         <title>Home | Corlate</title>
     	
     	<!-- core CSS -->
+    	<link href="/app.css" rel="stylesheet">
         <link href="/css/bootstrap.min.css" rel="stylesheet">
         <link href="/css/font-awesome.min.css" rel="stylesheet">
         <link href="/css/animate.min.css" rel="stylesheet">
@@ -28,11 +29,16 @@
     <body class="homepage">
         
         <header id="header">
-         @include('partials.header')
+            @include('partials.header')
         </header>
+        
         <section id="blog" class="container">
             @yield('container')
-        </section>    
+        </section>  
+        
+        <footer id="footer" class="midnight-blue">
+            @include('partials.footer')
+        </footer>
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.prettyPhoto.js"></script>
