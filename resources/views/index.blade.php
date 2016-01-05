@@ -155,5 +155,4 @@
     			</aside>  
             </div><!--/.row-->
         </div>
-   
 @stop

@@ -13,7 +13,13 @@
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="contact-us.html">Contact</a></li>                        
+                    @if ( ! Sentinel::check())
+                    <li{{ Request::is('login') ? ' class="active"' : null }}><a href="{{ URL::to('login') }}">Login</a></li>
+                    <li{{ Request::is('register') ? ' class="active"' : null }}><a href="{{ URL::to('register') }}">Register</a></li>
+                    @elseif (Sentinel::hasAccess('admin'))
+                    <li{{ Request::is('users*') ? ' class="active"' : null }}><a href="{{ URL::to('users') }}">Users</a></li>
+                    <li{{ Request::is('roles*') ? ' class="active"' : null }}><a href="{{ URL::to('roles') }}">Roles</a></li>
+                    @endif         
             </ul>
         </div>
     </div><!--/.container-->

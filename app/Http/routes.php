@@ -27,5 +27,9 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('login', 'AuthenController@login');
+    Route::post('login', 'AuthenController@processLogin');
+    Route::get('register', 'AuthenController@register');
+    Route::post('register', 'AuthenController@processRegistration');
+   
 });
