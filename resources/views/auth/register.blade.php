@@ -7,11 +7,22 @@
     <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
             <div class="panel panel-default">
+            	@if (count($errors) > 0)
+					<div class="alert alert-danger">
+						<strong>Whoops!</strong> There were some problems with your input.<br><br>
+						<ul>
+							@foreach ($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
                 <div class="panel-heading">
                     <h3 class="panel-title">Please sign up</h3>
                 </div>
                 <div class="panel-body">
-                    <form role="form">
+                    <form id = "signup"class="form-horizontal" role="form" method="POST" action="{{ url('register') }}">
+                        	<input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
