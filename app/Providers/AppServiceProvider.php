@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use \Sentinel;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -13,7 +13,14 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $role = Sentinel::findRoleById(1);
+        
+        $role->permissions = [
+        'admin' => true,
+        
+        ];
+        
+        $role->save();
     }
 
     /**
