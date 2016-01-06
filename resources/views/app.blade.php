@@ -39,12 +39,7 @@
         <footer id="footer" class="midnight-blue">
             @include('partials.footer')
         </footer>
-<<<<<<< HEAD
-=======
 
-              
-        
->>>>>>> integration_sentinel
         <script src="/js/jquery.js"></script>
         <script src="/js/bootstrap.min.js"></script>
         <script src="/js/jquery.prettyPhoto.js"></script>

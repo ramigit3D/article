@@ -13,4 +13,14 @@ class PagesController extends Controller
     {
         return view('account.home');
     }
+    
+     public function accountEdit()
+    {
+        return view('account.edit');
+    }
+    
+    public function accountPassword()
+    {
+        return view('account.password');
+    }
 }

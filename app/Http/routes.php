@@ -31,7 +31,12 @@ Route::group(['middleware' => ['web']], function () {
      * Route related to static pages
      */
     Route::get('/', 'HomeController@index');
+    
     Route::get('/account', 'PagesController@account');
+    
+    Route::get('/account/edit', 'PagesController@accountEdit');
+    
+    Route::get('/account/password', 'PagesController@accountPassword');
     /**
      * Session related routes
      */

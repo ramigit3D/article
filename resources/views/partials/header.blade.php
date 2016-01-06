@@ -32,8 +32,8 @@
               				</a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ URL::to('account') }}" align="center">Profile</a></li>
-                                <li><a href="{{ URL::to('account.edit') }}" align="center">Edit Account</a></li>
-                                <li><a href="{{ URL::to('account.password') }}"  align="center">Change Passowrd</a></li>
+                                <li><a href="{{ URL::to('account/edit') }}" align="center">Edit Account</a></li>
+                                <li><a href="{{ URL::to('account/password') }}"  align="center">Change Passowrd</a></li>
                             </ul>
               				
           				</li>
