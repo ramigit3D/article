@@ -147,6 +147,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        'Cartalyst\Sentinel\Laravel\SentinelServiceProvider',
 
         /*
          * Application Service Providers...
@@ -201,6 +202,11 @@ return [
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
+        
+        'Auth'      => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
+        'Activation' => 'Cartalyst\Sentinel\Laravel\Facades\Activation',
+        'Reminder'   => 'Cartalyst\Sentinel\Laravel\Facades\Reminder',
+        'Sentinel'   => 'Cartalyst\Sentinel\Laravel\Facades\Sentinel',
 
     ],
 

@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Input;
 /*
 |--------------------------------------------------------------------------
 | Routes File
@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
 
 /*
 |--------------------------------------------------------------------------
@@ -27,5 +24,32 @@ Route::get('/', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    //Sentinel::disableCheckpoints();
+    
+    
+   /**
+     * Route related to static pages
+     */
+    Route::get('/', 'HomeController@index');
+    Route::get('/account', 'PagesController@account');
+    /**
+     * Session related routes
+     */
+     
+    Route::get('/login', 'SessionController@create');
+    
+    Route::post('/login', 'SessionController@store');
+    
+    Route::get('/logout', 'SessionController@destroy');
+    
+    /**
+     * User related routes
+     */
+    
+    Route::get('/register', 'UserController@create');
+    
+    Route::post('/register', 'UserController@store');
+    
+    
+
 });
