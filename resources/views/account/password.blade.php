@@ -33,24 +33,60 @@
                         </div>
                     </div>
                 </div>
-                <form action="#">
-                <div class="form-group">
-                <label class="control-label">Current Password</label>
-                <input type="password" class="form-control" /> </div>
-                <div class="form-group">
-                <label class="control-label">New Password</label>
-                <input type="password" class="form-control" /> </div>
-                <div class="form-group">
-                <label class="control-label">Re-type New Password</label>
-                <input type="password" class="form-control" /> </div>
-                <div class="margin-top-10">
-                <a href="javascript:;" class="btn green"> Change Password </a>
-                <a href="javascript:;" class="btn default"> Cancel </a>
-                </div>
-                </form>
+                <div class="col-sm-9">
+                        <div class="tabs widget">
+                            <ul class="nav nav-tabs widget">
+                                <li class="active"> <a data-toggle="tab" href="#profile-tab"> Cahnge Password <span class="menu-active"></i></span> </a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                    <div class="tab-content">
+                        <div id="profile-tab" class="tab-pane active">
+                            <div class="pd-20">
+                                <form action="#">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="row mgbt-xs-0">
+                                                <div class="form-group">
+                                                    <label class="control-label">Current Password</label>
+                                                    <input type="password" class="form-control" /> 
+                                                </div>
+                                                <!-- col-sm-10 --> 
+                                            </div>
+                                        </div>
+                                    <div class="col-sm-6">
+                                        <div class="row mgbt-xs-0">
+                                            <div class="form-group">
+                                                <label class="control-label">New Password</label>
+                                                <input type="password" class="form-control" /> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="row mgbt-xs-0">
+                                            <div class="form-group">
+                                                <label class="control-label">Re-type New Password</label>
+                                                <input type="password" class="form-control" /> 
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="row mgbt-xs-0">
+                                            <div class="form-group">
+                                                <input type="submit" class="btn btn-primary readmore" value= "Change Password"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                               </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+  
 
 @stop

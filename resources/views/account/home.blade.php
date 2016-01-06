@@ -36,34 +36,43 @@
                 <div class="col-sm-9">
                         <div class="tabs widget">
                             <ul class="nav nav-tabs widget">
-                                <li class="active"> Profile  </a></li>
+                                <li class="active"> <a data-toggle="tab" href="#profile-tab"> Profile <span class="menu-active"></i></span> </a></li>
+
                             </ul>
                         </div>
                     </div>
-                    <div class="tab-content">
-                        <div id="profile-tab" class="tab-pane active">
-                            <div class="pd-20">
-                                <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="icon-user mgr-10 profile-icon"></i> ABOUT</h3>
-                                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="tab-content">
+                            <div id="profile-tab" class="tab-pane active">
+                                <div class="pd-20">
+                                    <h3 class="mgbt-xs-15 mgtp-10 font-semibold"><i class="icon-user mgr-10 profile-icon"></i> ABOUT</h3>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="row mgbt-xs-0">
+                                                <label class="col-xs-5 control-label">First Name:</label>
+                                                <div class="col-xs-7 controls">{{ $user->first_name }}</div>
+                                                <!-- col-sm-10 --> 
+                                            </div>
+                                        </div>
                                     <div class="col-sm-6">
                                         <div class="row mgbt-xs-0">
-                                            <label class="col-xs-5 control-label">First Name:</label>
-                                            <div class="col-xs-7 controls">{{ $user->first_name }}</div>
+                                            <label class="col-xs-5 control-label">Last Name:</label>
+                                            <div class="col-xs-7 controls">{{ $user->last_name }}</div>
                                             <!-- col-sm-10 --> 
                                         </div>
                                     </div>
-                                <div class="col-sm-6">
-                                    <div class="row mgbt-xs-0">
-                                        <label class="col-xs-5 control-label">Last Name:</label>
-                                        <div class="col-xs-7 controls">{{ $user->last_name }}</div>
-                                        <!-- col-sm-10 --> 
+                                    <div class="col-sm-6">
+                                        <div class="row mgbt-xs-0">
+                                            <label class="col-xs-5 control-label">Email:</label>
+                                            <div class="col-xs-7 controls">mariah@Vendroid.com</div>
+                                            <!-- col-sm-10 -->
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="row mgbt-xs-0">
-                                        <label class="col-xs-5 control-label">Email:</label>
-                                        <div class="col-xs-7 controls">mariah@Vendroid.com</div>
-                                        <!-- col-sm-10 -->
+                                    <div class="col-sm-6">
+                                        <div class="row mgbt-xs-0">
+                                            <label class="col-xs-5 control-label"></label>
+                                            <div class="col-xs-7 controls"><a class="btn btn-primary readmore" href="account/edit">Edit</a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
