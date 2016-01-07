@@ -10,6 +10,30 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+    /**
+     * Show all users.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $users = User::latest('created_at')->get();
+        
+        if (Sentinel::hasAccess('admin'))
+        {
+        return view('admin.userlist', compact('users'));
+        }
+    }
+    
+     public function show($id)
+    {
+        if (Sentinel::hasAccess('admin'))
+        {
+        $user = Sentinel::findUserById($id);
+        return view('admin.usershow', compact('user'));
+        }
+    }
+    
      /**
      * Show the form for creating a new resource.
      *
@@ -46,4 +70,18 @@ class UserController extends Controller
             return view('/register')->withErrors("La création du nouveau utilisateur a échoué");;
         }
     }
+    
+    public function destroy($id)
+	{
+	    $user = Sentinel::findUserById($id);
+	     if (Sentinel::hasAccess('admin'))
+        {
+    		
+    			$user->delete();
+    			
+    	
+    		
+        }
+	}
+
 }

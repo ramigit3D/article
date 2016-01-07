@@ -18,8 +18,7 @@
                     <li{{ Request::is('login') ? ' class="active"' : null }}><a href="{{ URL::to('login') }}">Login</a></li>
                     <li{{ Request::is('register') ? ' class="active"' : null }}><a href="{{ URL::to('register') }}">Register</a></li>
                     @elseif (Sentinel::hasAccess('admin'))
-                    <li{{ Request::is('users*') ? ' class="active"' : null }}><a href="{{ URL::to('users') }}">Users</a></li>
-                    <li{{ Request::is('roles*') ? ' class="active"' : null }}><a href="{{ URL::to('roles') }}">Roles</a></li>
+                   
                     @endif 
                     
                     @if ($user)
@@ -30,11 +29,17 @@
               					<span class="label label-danger">Inactive</span>
               					@endif
               				</a>
+              				@if (Sentinel::hasAccess('admin'))
+              				<ul class="dropdown-menu">
+                                <li><a href="{{ URL::to('admin/index') }}" align="center">dashboard</a></li>
+                            </ul>
+              				@else
                             <ul class="dropdown-menu">
                                 <li><a href="{{ URL::to('account') }}" align="center">Profile</a></li>
                                 <li><a href="{{ URL::to('account/edit') }}" align="center">Edit Account</a></li>
                                 <li><a href="{{ URL::to('account/password') }}"  align="center">Change Passowrd</a></li>
                             </ul>
+                            @endif 
               				
           				</li>
           				

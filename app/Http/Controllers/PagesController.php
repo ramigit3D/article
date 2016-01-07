@@ -23,4 +23,6 @@ class PagesController extends Controller
     {
         return view('account.password');
     }
+    
+    
 }

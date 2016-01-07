@@ -34,6 +34,16 @@ Route::group(['middleware' => ['web']], function () {
     
     Route::get('/account', 'PagesController@account');
     
+    Route::get('/admin/index', 'AdminController@index');
+    
+    Route::get('/admin/userlist', 'AdminController@userlist');
+    
+    Route::get('/admin/user/{id}', 'AdminController@usershow');
+    
+    Route::get('/admin/user/edit/{id}', 'AdminController@useredit');
+
+    Route::resource('user', 'UserController');
+    
     Route::get('/account/edit', 'PagesController@accountEdit');
     
     Route::get('/account/password', 'PagesController@accountPassword');
