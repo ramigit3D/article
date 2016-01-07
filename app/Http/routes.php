@@ -36,13 +36,9 @@ Route::group(['middleware' => ['web']], function () {
     
     Route::get('/admin/index', 'AdminController@index');
     
-    Route::get('/admin/userlist', 'AdminController@userlist');
-    
-    Route::get('/admin/user/{id}', 'AdminController@usershow');
-    
-    Route::get('/admin/user/edit/{id}', 'AdminController@useredit');
-
     Route::resource('user', 'UserController');
+    
+    Route::resource('role', 'RoleController');
     
     Route::get('/account/edit', 'PagesController@accountEdit');
     

@@ -23,6 +23,10 @@ class UserController extends Controller
         {
         return view('admin.userlist', compact('users'));
         }
+        else
+        {
+            return redirect('/');
+        }
     }
     
      public function show($id)
@@ -31,6 +35,10 @@ class UserController extends Controller
         {
         $user = Sentinel::findUserById($id);
         return view('admin.usershow', compact('user'));
+        }
+        else
+        {
+            return redirect('/');
         }
     }
     

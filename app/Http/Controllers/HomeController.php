@@ -11,20 +11,8 @@ class HomeController extends Controller
 {
      public function index()
     {
-        $user = \Sentinel::getUser();
-       
-        if (1)
-	{
+        
 	    return view('index');
            
-        
-        }
-        else 
-        {
-             return view('account.edit');
-            
-        }
-        
-        
     }
 }
