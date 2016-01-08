@@ -99,7 +99,7 @@
                            
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-thumbs-o-up"></i> Roles</a>
+                            <a href="/role"><i class="fa fa-thumbs-o-up"></i> Roles</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Articles<span class="fa arrow"></span></a>
