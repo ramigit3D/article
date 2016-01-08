@@ -40,6 +40,8 @@ Route::group(['middleware' => ['web']], function () {
     
     Route::resource('role', 'RoleController');
     
+    Route::resource('articles', 'ArticleController');
+    
     Route::get('/account/edit', 'PagesController@accountEdit');
     
     Route::get('/account/password', 'PagesController@accountPassword');

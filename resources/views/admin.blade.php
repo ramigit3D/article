@@ -102,10 +102,10 @@
                             <a href="/role"><i class="fa fa-thumbs-o-up"></i> Roles</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Articles<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-edit fa-fw"></i> Articles<span class="fa arrow"></span></a>
                              <ul class="nav nav-second-level">
                                  <li>
-                                    <a href="panels-wells.html">List Articles</a>
+                                    <a href="/articles">List Articles</a>
                                 </li>
                                 <li>
                                     <a href="panels-wells.html">Add Article</a>
