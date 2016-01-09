@@ -1,69 +1,47 @@
 @extends('admin')
 @section('contain')
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Show Role</h1>
-                </div>
-                <!-- /.col-lg-12 -->
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Show Role</h1>
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12 col-md-6">
-  
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">{{ $role->name }}</h3>
-  </div>
-
-  <div class="panel-body">
-     
-      
-    <table>
-    <thead>
-        <tr>
-        <th data-column-id="permissions" data-order="desc">Permissions</th>
-    </thead>
-    
-    <tbody>
-         @forelse($role->permissions as $permission)
-        <tr>
-          <td>{{ $permission['admin'] }}</td>
-        
-        </tr>
-        @empty
-    @endforelse
-    </tbody>
-    </table>
-   
-  </div>
-
-    
-
-  <div class="panel-footer">
-  
-    <a href="{{ route('role.edit', ['id' => $role->id]) }}" class="btn btn-default">Edit</a>
-    
-    
-    
-    <div class="row pull-right">
-      <div class="col-sm-2 text-center" data-column-id="forme">
-      
-      <p><button id="delete" class="btn btn-danger sweet-4" data-id='{{ $role->id }}' name ='delete'>Delete</button></p>
-      
-      </div>
-   
-    </div>
-</div>
-                </div>
-            </div>
-           
         </div>
-        <!-- /#page-wrapper -->
-
+        <div class="row">
+            <div class="col-lg-12 col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{ $role->name }}</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table>
+                            <thead>
+                                <tr>
+                                <th data-column-id="permissions" data-order="desc">Permissions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @forelse($role->permissions as $permission)
+                                    <tr>
+                                        <td>{{ $permission['admin'] }}</td>
+                                    </tr>
+                                @empty
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="panel-footer">
+                        <a href="{{ route('role.edit', ['id' => $role->id]) }}" class="btn btn-default">Edit</a>
+                        <div class="row pull-right">
+                            <div class="col-sm-2 text-center" data-column-id="forme">
+                                <p><button id="delete" class="btn btn-danger sweet-4" data-id='{{ $role->id }}' name ='delete'>Delete</button></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /#wrapper -->
 
 @endsection
 @push('addscript')
@@ -99,10 +77,10 @@
                   .done(function(data) {
                   
                   swal({
-                  title:"Deleted!",
-                  text:"Your imaginary file has been deleted.",
-                  type: "success"
-                  
+                      title:"Deleted!",
+                      text:"Your imaginary file has been deleted.",
+                      type: "success"
+                      
                   }, 
                   function(){
                     window.location.href = '/user';
@@ -110,7 +88,7 @@
                   });
                   })
                   .fail(function() {
-                  swal("Error", "Your imaginary file is safe :)", "error");
+                    swal("Error", "Your imaginary file is safe :)", "error");
                   });
                
                 });

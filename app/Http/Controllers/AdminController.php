@@ -16,7 +16,7 @@ class AdminController extends Controller
         
         if (Sentinel::hasAccess('admin'))
         {
-        return view('admin.index');
+            return view('admin.index');
         }
     }
     

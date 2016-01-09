@@ -8,7 +8,7 @@ use \Sentinel;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class UsersController extends Controller
 {
     /**
      * Show all users.

@@ -7,6 +7,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                
+
                 <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="logo"></a>
             </div>
         
@@ -45,6 +47,8 @@
           				
       				    <li><a href="{{ URL::to('logout') }}"><span class="menu-icon"><i class="fa fa-sign-out"></i></span>  Logout</a></li>
       				@endif
+      				<li><img src="/images/fr.png"  /></li>
+      				<li><img src="/images/en.png"  /></li>
             </ul>
         </div>
     </div><!--/.container-->

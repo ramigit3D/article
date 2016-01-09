@@ -35,16 +35,11 @@
                                 @endforeach
                                 </td>
                                 <td>
-                                
-                                
                                 </td>
                             </tr>
-                        
                         @empty
                         @endforelse
                     </tbody>
-                    
-                    
                 </table>
             </div>
         </div>
@@ -53,26 +48,32 @@
 @push('addscript')
     <script>
         $(document).ready(function(){
-        
-        $("#table-articles").bootgrid({
-          formatters: {
-            "commands": function(column, row){
-              return '<button type="button" class="btn btn-xs btn-default command-edit" data-row-id="' + row.id + '"><span class="glyphicon glyphicon-folder-open" onclick="window.location = \'articles/'+ row.id +'\'"></span></button>';
-            }
-          },
-          converters: {
-            datetime: {
-                from: function (value) {
-                  console.log(value);
-                  return moment(value); 
+            
+            $("#table-articles").bootgrid({
+                formatters: 
+                {
+                    "commands": function(column, row)
+                    {
+                        return '<button type="button" class="btn btn-xs btn-default command-edit" data-row-id="' + row.id + '"  onclick="window.location = \'articles/'+ row.id +'\'"><span class="glyphicon glyphicon-folder-open"></span></button>';
+                    }
                 },
-                to: function (value) { 
-                  return value.fromNow(); 
+                converters:
+                {
+                    datetime: 
+                    {
+                        from: function (value) 
+                        {
+                            console.log(value);
+                            return moment(value); 
+                        },
+                        to: function (value) 
+                        { 
+                            return value.fromNow(); 
+                        }
+                    }
                 }
-            }
-          }
-        });
-        
+            });
+            
         });  
 
      

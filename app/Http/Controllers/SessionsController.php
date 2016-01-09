@@ -7,7 +7,7 @@ use \Sentinel;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-class SessionController extends Controller
+class SessionsController extends Controller
 {
     /**
      * Show the form for creating a new resource.

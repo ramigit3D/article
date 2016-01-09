@@ -27,41 +27,57 @@ Route::group(['middleware' => ['web']], function () {
     //Sentinel::disableCheckpoints();
     
     
-   /**
+    /**
      * Route related to static pages
      */
     Route::get('/', 'HomeController@index');
     
+    /**
+     * Account related routes
+     */
     Route::get('/account', 'PagesController@account');
-    
-    Route::get('/admin/index', 'AdminController@index');
-    
-    Route::resource('user', 'UserController');
-    
-    Route::resource('role', 'RoleController');
-    
-    Route::resource('articles', 'ArticleController');
     
     Route::get('/account/edit', 'PagesController@accountEdit');
     
     Route::get('/account/password', 'PagesController@accountPassword');
+    
+    
+    Route::get('/admin/index', 'AdminController@index');
+    
+    /**
+     * User related routes
+     */
+    Route::resource('user', 'UsersController');
+    
+    /**
+     * Role related routes
+     */
+    Route::resource('role', 'RolesController');
+    
+    /**
+     * Articles related routes
+     */
+    Route::resource('articles', 'ArticlesController');
+    
+   
+    
     /**
      * Session related routes
      */
      
-    Route::get('/login', 'SessionController@create');
+    Route::get('/login', 'SessionsController@create');
     
-    Route::post('/login', 'SessionController@store');
+    Route::post('/login', 'SessionsController@store');
     
-    Route::get('/logout', 'SessionController@destroy');
+    Route::get('/logout', 'SessionsController@destroy');
     
     /**
      * User related routes
      */
     
-    Route::get('/register', 'UserController@create');
+    Route::get('/register', 'UsersController@create');
     
-    Route::post('/register', 'UserController@store');
+    Route::post('/register', 'UsersController@store');
     
     
 
