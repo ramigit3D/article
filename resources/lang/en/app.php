@@ -23,6 +23,7 @@ return [
     'confirm' => "Confirm",
     'allright' => "All Rights Reserved",
     'read' => 'Read More',
+    'search' => 'Search',
     
     
 ];

@@ -21,7 +21,7 @@ class UsersController extends Controller
         
         if (Sentinel::hasAccess('admin'))
         {
-        return view('admin.userlist', compact('users'));
+            return view('admin.userlist', compact('users'));
         }
         else
         {
@@ -33,8 +33,8 @@ class UsersController extends Controller
     {
         if (Sentinel::hasAccess('admin'))
         {
-        $user = Sentinel::findUserById($id);
-        return view('admin.usershow', compact('user'));
+            $user = Sentinel::findUserById($id);
+            return view('admin.usershow', compact('user'));
         }
         else
         {
@@ -67,6 +67,7 @@ class UsersController extends Controller
             'last_name' => $request->get('last_name'),
             
         ];
+        
         $rules = [
 			'email'            => 'required|email|unique:users',
 			'password'         => 'required',
@@ -75,17 +76,14 @@ class UsersController extends Controller
         
         $user = Sentinel::register($userCredentials, true);
         
-        if ( !$user == false )
+        if ( $user === false )
         {
-            return redirect('/login');
+            return view('/register')->withInput()->withErrors();;
         }
         else
         {
-            return view('/register');
+            return redirect('/login');
         }
-        return Redirect::back()
-        ->withInput()
-        ->withErrors();
     }
     
     public function destroy($id)
@@ -93,11 +91,7 @@ class UsersController extends Controller
 	    $user = Sentinel::findUserById($id);
 	     if (Sentinel::hasAccess('admin'))
         {
-    		
-    			$user->delete();
-    			
-    	
-    		
+    		$user->delete();
         }
 	}
 	 

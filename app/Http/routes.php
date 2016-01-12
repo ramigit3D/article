@@ -30,6 +30,9 @@ Route::group(['middleware' => ['web']], function () {
      * Route related to static pages
      */
     Route::get('/', 'HomeController@index');
+    /**
+     * Route related to setLocale
+     */
     
     Route::get('/language/{locale}', ['as' => 'language', function ($locale) {
        
@@ -64,6 +67,9 @@ Route::group(['middleware' => ['web']], function () {
      */
     Route::resource('articles', 'ArticlesController');
     
+    Route::get('/article/{article}', 'HomeController@showarticle');
+    
+    Route::get('/article/tag/{id}', 'HomeController@articlesbytag');
    
     
     /**

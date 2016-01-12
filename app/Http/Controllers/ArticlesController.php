@@ -32,8 +32,15 @@ class ArticlesController extends Controller
 	 */
 	public function show($id)
 	{
-	    $article = Article::findOrFail($id);
-		return view('admin.articles.show', compact('article'));
+	 	$article = Article::findOrFail($id);
+		if (Sentinel::hasAccess('admin'))
+        {
+			return view('admin.articles.show', compact('article'));
+        }
+        else
+        {
+        	return view('showarticle', compact('article'));
+        }
 	}
 		/**
 	 * Show the page to create a new article
