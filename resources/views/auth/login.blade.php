@@ -2,12 +2,12 @@
 @section('container')
 <div class="middlePage">
     <div class="page-header">
-        <h1 class="logo" align="center">Welcome </h1>
+        <h1 class="logo" align="center">{{ trans('app.welcome') }} </h1>
     </div>
     
     <div class="panel panel-info">
         <div class="panel-heading">
-            <h3 class="panel-title">Please Sign In</h3>
+            <h3 class="panel-title">{{ trans('app.please')}}</h3>
             @if (count($errors) > 0)
                 <div class="alert alert-danger">
                     <strong>Whoops!</strong> <br><br>
@@ -34,11 +34,11 @@
                     	{!! csrf_field() !!}
                         <fieldset>
                         
-                            <input id="textinput" name="email" type="text" placeholder="Enter Email" class="form-control input-md">
-                            <div class="spacing"><input type="checkbox" name="remember" id="checkboxes-0" value="1"><small> Remember me</small></div>
-                            <input id="textinput" name="password" type="password" placeholder="Enter Password" class="form-control input-md">
-                            <div class="spacing"><a href="#"><small> Forgot Password?</small></a><br/></div>
-                            <button id="singlebutton" name="singlebutton" class="btn btn-info btn-sm pull-right">Sign In</button>
+                            <input id="textinput" name="email" type="text" placeholder="{{ trans('app.enteremail')}}" class="form-control input-md">
+                            <div class="spacing"><input type="checkbox" name="remember" id="checkboxes-0" value="1"><small>{{ trans('app.remember')}}</small></div>
+                            <input id="textinput" name="password" type="password" placeholder="{{ trans('app.entermp')}}" class="form-control input-md">
+                            <div class="spacing"><a href="#"><small> {{ trans('app.forgot')}}</small></a><br/></div>
+                            <button id="singlebutton" name="singlebutton" class="btn btn-info btn-sm pull-right">{{ trans('app.login')}}</button>
                             
                         </fieldset>
                     </form>

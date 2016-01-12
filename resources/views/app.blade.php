@@ -1,3 +1,5 @@
+<?php //dd(\App::getLocale()); ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -5,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Home | Corlate</title>
+        <title>{{ trans('app.title') }}</title>
     	
     	<!-- core CSS -->
     	<link href="/app.css" rel="stylesheet">
@@ -46,6 +48,7 @@
         <script src="/js/jquery.isotope.min.js"></script>
         <script src="/js/main.js"></script>
         <script src="/js/wow.min.js"></script>
+        <script type="text/javascript" src="//www.clubdesign.at/floatlabels.js"></script>
         
          @yield('addscript')     
     </body>

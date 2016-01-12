@@ -14,11 +14,11 @@
         
         <div class="collapse navbar-collapse navbar-right">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
+                <li class="active"><a href="/">{{ trans('app.home') }}</a></li>
                    <?php $user = \Sentinel::getUser() ?>
                     @if (!$user)
-                    <li{{ Request::is('login') ? ' class="active"' : null }}><a href="{{ URL::to('login') }}">Login</a></li>
-                    <li{{ Request::is('register') ? ' class="active"' : null }}><a href="{{ URL::to('register') }}">Register</a></li>
+                    <li{{ Request::is('login') ? ' class="active"' : null }}><a href="{{ URL::to('login') }}">{{ trans('app.login') }}</a></li>
+                    <li{{ Request::is('register') ? ' class="active"' : null }}><a href="{{ URL::to('register') }}">{{ trans('app.register') }}</a></li>
                     @elseif (Sentinel::hasAccess('admin'))
                    
                     @endif 
@@ -26,29 +26,29 @@
                     @if ($user)
   					    <li class="dropdown">
   					        
-  					        <a href="{{ URL::to('account') }}" class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span>
+  					        <a href="{{ URL::to('account') }}" class="dropdown-toggle" data-toggle="dropdown">{{ trans('app.account') }}<span class="caret"></span>
               					@if ( ! Activation::completed($user))
               					<span class="label label-danger">Inactive</span>
               					@endif
               				</a>
               				@if (Sentinel::hasAccess('admin'))
               				<ul class="dropdown-menu">
-                                <li><a href="{{ URL::to('admin/index') }}" align="center">dashboard</a></li>
+                                <li><a href="{{ URL::to('admin/index') }}" align="center">{{ trans('app.dashboard') }}</a></li>
                             </ul>
               				@else
                             <ul class="dropdown-menu">
-                                <li><a href="{{ URL::to('account') }}" align="center">Profile</a></li>
-                                <li><a href="{{ URL::to('account/edit') }}" align="center">Edit Account</a></li>
-                                <li><a href="{{ URL::to('account/password') }}"  align="center">Change Passowrd</a></li>
+                                <li><a href="{{ URL::to('account') }}" align="center">{{ trans('app.profil') }}</a></li>
+                                <li><a href="{{ URL::to('account/edit') }}" align="center"> {{ trans('app.editaccount') }}</a></li>
+                                <li><a href="{{ URL::to('account/password') }}"  align="center">{{ trans('app.changemp') }}</a></li>
                             </ul>
                             @endif 
               				
           				</li>
           				
-      				    <li><a href="{{ URL::to('logout') }}"><span class="menu-icon"><i class="fa fa-sign-out"></i></span>  Logout</a></li>
+      				    <li><a href="{{ URL::to('logout') }}"><span class="menu-icon"><i class="fa fa-sign-out"></i></span>{{ trans('app.logout') }}</a></li>
       				@endif
-      				<li><img src="/images/fr.png"  /></li>
-      				<li><img src="/images/en.png"  /></li>
+      				<li><a href = "{{  URL::to(route('language', ["locale" => 'fr'])) }}"><img src="/images/fr.png"  /></a></li>
+      				<li><a href = "{{ URL::to(route('language',  ["locale" => 'en'])) }}"><img src="/images/en.png"  /></a></li>
             </ul>
         </div>
     </div><!--/.container-->

@@ -65,18 +65,27 @@ class UsersController extends Controller
             'password' => $request->get('password'),
             'first_name' => $request->get('first_name'),
             'last_name' => $request->get('last_name'),
+            
+        ];
+        $rules = [
+			'email'            => 'required|email|unique:users',
+			'password'         => 'required',
+			'password_confirm' => 'required|same:password',
         ];
         
         $user = Sentinel::register($userCredentials, true);
         
-        if ( $user )
+        if ( !$user == false )
         {
             return redirect('/login');
         }
         else
         {
-            return view('/register')->withErrors("La création du nouveau utilisateur a échoué");;
+            return view('/register');
         }
+        return Redirect::back()
+        ->withInput()
+        ->withErrors();
     }
     
     public function destroy($id)
@@ -91,5 +100,6 @@ class UsersController extends Controller
     		
         }
 	}
+	 
 
 }

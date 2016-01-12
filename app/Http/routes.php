@@ -24,14 +24,19 @@ use Illuminate\Support\Facades\Input;
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //Sentinel::disableCheckpoints();
-    
+   
     
     /**
      * Route related to static pages
      */
     Route::get('/', 'HomeController@index');
     
+    Route::get('/language/{locale}', ['as' => 'language', function ($locale) {
+       
+        \Session::put('locale', $locale);
+         
+		return redirect("/");
+    }]);
     /**
      * Account related routes
      */

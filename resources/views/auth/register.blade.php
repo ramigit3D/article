@@ -18,7 +18,7 @@
 					</div>
 				@endif
                 <div class="panel-heading">
-                    <h3 class="panel-title">Please sign up</h3>
+                    <h3 class="panel-title">{{ trans('app.signup')}}</h3>
                 </div>
                 <div class="panel-body">
                     <form id = "signup"class="form-horizontal" role="form" method="POST" action="{{ url('register') }}">
@@ -26,34 +26,34 @@
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="First Name">
+                                    <input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="{{ trans('app.first')}}">
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name">
+                                    <input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="{{ trans('app.last')}}">
                                 </div>
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+                            <input type="email" name="email" id="email" class="form-control input-sm" placeholder="{{ trans('app.email')}}">
                         </div>
                         
                         <div class="row">
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+                                    <input type="password" name="password" id="password" class="form-control input-sm" placeholder="{{ trans('app.password')}}">
                                 </div>
                             </div>
                             <div class="col-xs-6 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="password" name="password_confirm" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+                                    <input type="password" name="password_confirm" id="password_confirmation" class="form-control input-sm" placeholder="{{ trans('app.confirm').' '.trans('app.password')}}">
                                 </div>
                             </div>
                         </div>
                         
-                        <input type="submit" value="Register" class="btn btn-info btn-block">
+                        <input type="submit" value="{{ trans('app.register')}}" class="btn btn-info btn-block">
                         
                     </form>
                 </div>
@@ -62,6 +62,3 @@
     </div>
 </div>
 @endsection
-@push('addscript')
-<script type="text/javascript" src="//www.clubdesign.at/floatlabels.js"></script>
-@stop
